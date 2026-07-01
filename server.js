@@ -12,6 +12,12 @@ connectDB();
 const app=express();
 app.use(cors());
 app.use(express.json());
+app.get("/", (req, res) => {
+  res.json({
+    success: true,
+    message: "Simple Polling API is running successfully 🚀",
+  });
+});
 app.use("/polls",pollRoutes);
 
 app.listen(process.env.PORT,()=>{
