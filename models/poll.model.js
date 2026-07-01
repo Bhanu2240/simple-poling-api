@@ -28,7 +28,14 @@ const pollSchema = new mongoose.Schema(
                 message: "A poll must have at least two options.",
             },
         },
+        votedIPs: [
+          {
+           type: [String],
+             default: [],
+          },
+        ],
     },
+  
     {
         timestamps: true,
     }
